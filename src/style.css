@@ -1,21 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#root{
+body {
   background-color: rgba(162, 182, 184, 0.322);
   font-family: Roboto, "Arial", "Helvetica", sans-serif;
 }
 
 main {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   padding: 10px;
 }
 
@@ -25,80 +25,77 @@ main {
   gap: 10px;
   margin-bottom: 10px;
   padding: 10px;
-
 }
-
-#input {
-  border: 2px solid rgb(119, 197, 119);
-  /* border-color:rgb(119, 197, 119); */
-  border-radius: 5px;
-  padding-left: 10px;
-}
-
-#grupo-personajes {
-  width: 85%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px;
-  /* align-items: center;
-  justify-content: space-between; */
-  padding: 10px;
-}
-
 #filter-button {
-  width: 80px;
-  padding: 8px;
-  background-color: rgb(119, 197, 119);
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s ease;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(119, 197, 119);
+  width: 80px;
+  padding: 8px;
 }
 
 #filter-button:active {
   background-color: rgb(85, 136, 85);
 }
 
- .character-container {
+#input {
+  border: 2px solid rgb(119, 197, 119);
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+#grupo-personajes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 10px;
+}
+.character-container {
   display: flex;
   justify-content: space-evenly;
-  padding: 15px;
-   flex-direction: column;
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
   background-color: white;
   border-radius: 5px;
-  height: 500px;
+  max-height: 500px;
+  padding: 15px;
 }
 
 .character-container img {
-  /* max-width: 60px; */
-  /* display: block;
-  margin: auto; */
   height: 60%;
-  max-width: 300px; 
-  /* padding-bottom: 15px; */
-} 
-
-
+  max-width: 300px;
+}
 
 .p-elements-container {
   display: flex;
   flex-direction: column;
-  /* height: 40%; */
 }
 
 .p-elements-container p {
   padding: 5px;
-  /* justify-content: space-around; */
 }
 
+@media screen and (max-width: 1200px) {
+  .character-container img {
+    max-width: 150px;
+  }
+}
 
-/* 
-.personajes {
-  width: 85%;
-  margin: 0 auto;
-} */
+@media screen and (max-width: 800px) {
+  #grupo-personajes {
+    grid-template-columns: auto;
+    justify-content: center;
+    padding: 20px;
+    width: 60%;
+  }
+  .character-container img {
+    max-width: 300px;
+  }
+}

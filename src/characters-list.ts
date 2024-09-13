@@ -12,45 +12,43 @@ const createImageElement = (
   return image;
 };
 
-// const createPElement = (text: string): HTMLParagraphElement => {
-//   const paragraph = document.createElement("p");
-//   paragraph.textContent = text;
-//   return paragraph;
-// };
-
-const createLabelledPElement = (label: string, text: string): HTMLParagraphElement => {
-  const paragraph = document.createElement('p');
+const createLabelledPElement = (
+  label: string,
+  text: string
+): HTMLParagraphElement => {
+  const paragraph = document.createElement("p");
   paragraph.innerHTML = `<strong>${label}:</strong> ${text}`;
   return paragraph;
 };
-
 
 const createCharacterContent = (character: Character): HTMLDivElement => {
   const characterElement = document.createElement("div");
   characterElement.classList.add("character-container");
   const containerPElement = document.createElement("div");
-  containerPElement.classList.add('p-elements-container')
+  containerPElement.classList.add("p-elements-container");
 
   const image = createImageElement(character.nombre, character.imagen);
   characterElement.appendChild(image);
 
-  
-
-  const name = createLabelledPElement('Nombre', character.nombre);
-  name.classList.add('character-name');
+  const name = createLabelledPElement("Nombre", character.nombre);
+  name.classList.add("character-name");
   containerPElement.appendChild(name);
 
-
-  //specialty
-  const speciality = createLabelledPElement('Especialidad', character.especialidad);
+  const speciality = createLabelledPElement(
+    "Especialidad",
+    character.especialidad
+  );
   containerPElement.appendChild(speciality);
 
-  const skillsElement = createLabelledPElement('Habilidades', character.habilidades.join(', '));
+  const skillsElement = createLabelledPElement(
+    "Habilidades",
+    character.habilidades.join(", ")
+  );
   containerPElement.appendChild(skillsElement);
 
-  characterElement.appendChild(containerPElement)
+  characterElement.appendChild(containerPElement);
 
-  console.log('character content created')
+  console.log("character content created");
   return characterElement;
 };
 
@@ -63,7 +61,7 @@ const showCharacters = async (): Promise<void> => {
     characters.forEach((character) => {
       const characterContainer = createCharacterContent(character);
       list.appendChild(characterContainer);
-      console.log('character content appended to Document')
+      console.log("character content appended to Document");
     });
   } else {
     throw new Error("List HTML element not found");
@@ -77,4 +75,3 @@ if (filterButton && filterButton instanceof HTMLButtonElement) {
 }
 
 document.addEventListener("DOMContentLoaded", showCharacters);
-

@@ -1,6 +1,3 @@
-//fx that uses the userinput, runs through a loop of all the names in the api/html and checks for matchs (.some())
-
-//get user input fx
 const obtenerValorCampo = (): string => {
   const elementoCampo = document.querySelector("#input");
 
@@ -21,7 +18,7 @@ export const checkNames = (): void => {
     ) as HTMLElement;
 
     if (nameElement) {
-      const characterName = nameElement.textContent || ""; //gets text content for name
+      const characterName = nameElement.textContent || "";
 
       if (characterName.includes(userInput)) {
         (characterElement as HTMLElement).style.display = "";
@@ -31,13 +28,5 @@ export const checkNames = (): void => {
         console.log("no matches");
       }
     }
-
-    //need to link this to the button
   });
 };
-
-
-
-// if (filterButton && filterButton instanceof HTMLButtonElement) {
-
-// }
