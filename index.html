@@ -3,13 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Entrega 10 Asincronía</title>
   </head>
   <body>
-    <div id="app">
-      <h1>TypeScript Sandbox</h1>
+    <div id="root">
+      <main>
+        <h1>Personajes de Moradelo y Filemón</h1>
+        <div class="contenedorBoton">
+          <input id="input" type="text" required />
+          <button id="filter-button">Filtrar</button>
+        </div>
+        <div id="grupo-personajes"></div>
+      </main>
     </div>
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/characters-list.ts"></script>
   </body>
 </html>
